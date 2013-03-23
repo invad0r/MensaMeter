@@ -1,4 +1,12 @@
 # Log
+
+## 2013-03-01
+- something else happend today (test)
+
+'''javascript Code Syntax
+var s = 5;
+'''
+
 ## 2013-03-22
 - worked on the parser
 	- changed mysql extension from mysql to mysqli (=improved)
