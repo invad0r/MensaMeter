@@ -3,7 +3,8 @@
 ## 2013-03-01
 - something else happend today (test)
 
-```javascript Code Syntax
+```
+javascript Code Syntax
 var s = 5;
 ```
 
