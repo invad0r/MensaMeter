@@ -16,3 +16,11 @@ var s = 5;
 ## 2013-03-23
 - worked on the parser
 	- tried using the PHP DOM Class instead of [SimpleHTMLDOMParser](http://simplehtmldom.sourceforge.net/) -> Buggy or at leat unsure how to use correct
+	- PHP DOMDocument parses Date correctly
+	
+## 2013-03-25
+- worked on the parser
+	- can INSERT into Database now
+	- trouble with quotations in String -> MySQL throws Error
+		- have to purge the strings before saving in DB
+		- str_replace, preg_replace should do the trick

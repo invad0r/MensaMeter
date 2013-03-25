@@ -1,23 +1,27 @@
-<div id="dbinfo">
 	<?php
 	include('simple_html_dom.php');
 	require '../config/dbconfig.php';
 
 	//revision für das essen-table
-	$rev = 'r04';
-	$mensa = 'finkenau';
+	$rev = 'r01';
+	$mensa = 'essen_finkenau';
+	// Tabellen-Name der in DB verwendet wird
 	$table_name = $mensa.'_'.$rev;
 
-	// Habe mich für die MySQL-Extetion msqli (=improved) entscheiden, da empfohlen
-	// ->http://www.php.net/manual/de/mysqli.overview.php
-	// und version 5.1.67 auf dem Server läuft
-	// Erzeugung mit mysqli
-	// http://www.w3schools.com/php/php_mysql_create.asp
+	/* 
+		Habe mich für die MySQL-Extetion msqli (=improved) entscheiden, da empfohlen
+		->http://www.php.net/manual/de/mysqli.overview.php
+		und version 5.1.67 auf dem Server läuft
+		Erzeugung mit mysqli
+		http://www.w3schools.com/php/php_mysql_create.asp
+	*/
 
 	$connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysqli_error());
-	// Eigentlich redundat weil ob schon "or die" abfrägt ob eine Verbinung zustande kommt
-	// verwende hier eine simple if-abfrage 
-	// Bsp: if(bed)echo 'a'; else echo 'b';
+	/* 
+		Eigentlich redundat weil ob schon "or die" abfrägt ob eine Verbinung zustande kommt
+		verwende hier eine simple if-abfrage 
+		Bsp: if(bed)echo 'a'; else echo 'b';
+	*/
 	if(!$connection) die('<br>Keine Verbindung: '.mysqli_error()); else echo '<br>Verbunden :)';
 
 	// Syntax für MySQL-Extension
@@ -27,7 +31,7 @@
 
 	// --------------------------------------------------------------------------------------
 	// Erstellung der Table, falls noch nicht EXISTS
-	$create_table ='CREATE TABLE IF NOT EXISTS essen_'.$table_name.'  
+	$create_table ='CREATE TABLE IF NOT EXISTS '.$table_name.'  
 						(
 							id INT NOT NULL AUTO_INCREMENT,
 							datum VARCHAR(200) NOT NULL,
@@ -37,19 +41,23 @@
 						)
 						ENGINE=InnoDB';
 
-	// Execute query
-	if (mysqli_query($connection,$create_table))
-	  {
-	  echo "<br>Table ".$table_name." created successfully :)<br>".$rev;
-	  }
-	else
-	  {
-	  echo "<br>Error creating table: ".mysqli_error($connection);
-	  }
-	 ?>
- </div>
- 
- <?php 
+	// Table erzeugen und überprüfen
+	if (mysqli_query($connection,$create_table)){
+		echo "<br>Table ".$table_name." created successfully :)<br>".$rev;
+	}else{
+		echo "<br>Error creating table: ".mysqli_error($connection);
+	}
+	
+	//$insert_dummy = 'INSERT INTO '.$table_name.'VALUES(0,"12.02.2011","bla bla bla",4)';
+	/* Testweiser INSERT
+	$insert_dummy = 'INSERT INTO '.$table_name.'(datum,beschreibung,bewertung) VALUES("12.02.2011","bla bla bla",4)';
+	
+		if (mysqli_query($connection,$insert_dummy)){
+		echo "\n Inserted successfully :)\n".$rev;
+	}else{
+		echo "<br> Error inserting: ".mysqli_error($connection);
+	}
+	*/
 // --------------------------------------------------------------------------------------
 /* 
 	*** Der Parser Teil ***
@@ -58,16 +66,15 @@
 	http://www.codekites.com/php-tutorial-parsing-html-with-domdocument/
 */ 
 
-// damit keine E_WARNING : type 2 -- DOMDocument::loadHTMLFile()
-// weil vermutlich HTML nicht richtig ?!
-//libxml_use_internal_errors(false); 
+// damit keine E_WARNING : type 2 -- DOMDocument::loadHTMLFile() -> fehlerhaftes HTML ?!
+libxml_use_internal_errors(true); 
 
 $url = "http://speiseplan.studwerk.uptrade.de/de/620/2013/0/";
 
 $dom = new domDocument;
 $dom->loadHTMLFile($url);
 
-if(isset($dom))echo"dom loaded!<br>";else "failed loading dom";
+if(isset($dom))echo"\n dom loaded! \n";else "\nfailed loading dom\n";
 
 $finder = new DomXPath($dom);
 
@@ -81,15 +88,37 @@ $nodeval = trim($nodes->item(0)->nodeValue);
 // Trenne Wochentag von Datum
 $datesplit = explode(", ",$nodeval);
 $date = $datesplit[1];
-//echo "Date: ".$date;
+echo "Date: ".$date;
 
-$query = mysqli_query($connection,"INSERT INTO ".$table_name." (datum, beschreibung, bewertung)
-VALUES ('Peter', 'Griffin',35)");
+/*	Parse nach Essen -> class:dish-description
+	-> lässt sich gut ine ine Klasse/Funkction verbinden _> doppelter Code!
+*/
+$classname="dish-description";
+$nodes = $finder->query("//*[contains(@class, '$classname')]");
 
-if($query)echo $date."wurde gespeichert";else "es wurde nix gespeichert";
 
-//mysqli_query($connection,"INSERT INTO ".$table_name." (datum, beschreibung, bewertung) VALUES ('asdfas', '- - -',0)");
-//mysqli_query($connection,"INSERT INTO ".$table_name." (datum, beschreibung, bewertung) VALUES ('".$date."', '- - -',0)");
+
+
+
+$nodes_length = $nodes->length;
+for($i=0;$i<$nodes_length;$i++){
+	//echo trim($nodes->item($i)->nodeValue)."<br>";
+	$essen = trim($nodes->item($i)->nodeValue);
+	//stripslashes($essen);
+	//str_replace('"','',$essen);
+	
+	//echo str_replace(array('"'), ' ', $nodeval); <<<--------joau
+	
+	$insert = 'INSERT INTO '.$table_name.'(datum,beschreibung,bewertung) VALUES("'.$date.'","'.$essen.'",0)';
+		
+	if (mysqli_query($connection,$insert)){
+		echo "<br> Inserted successfully :):".$essen;
+	}else{
+		echo "<br> Error inserting: ".mysqli_error($connection);
+	}
+	
+}
+
 
 
 //--------------------------------------------------------------------------------------------
@@ -108,8 +137,10 @@ for ($i=0;$i<sizeof($dish);$i++){
 */  
   
 // --------------------------------------------------------------------------------------
-// Verbinung mit Datenbank wird geschlossen!
-// für den fall das mysql_close buggy wird auskommentieren !
-// -> https://bugs.php.net/bug.php?id=30525
-mysqli_close($connection);
+/*
+	Verbinung mit Datenbank wird geschlossen!
+	für den fall das mysql_close buggy wird auskommentieren !
+	-> https://bugs.php.net/bug.php?id=30525
+*/
+mysqli_close($connection); 
 ?>
