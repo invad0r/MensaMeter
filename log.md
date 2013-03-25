@@ -37,22 +37,21 @@ Hier werden die Ereignisse und erreichten Meilensteine/Iterationen des Tages dok
 	- Daniel → Twitter Login 
 
 ## 2013-02-12 Dienstag
-Besprechung mit Dominik Wigger
-Aktueller Standpunkt des Projekts
-Rahmenpunkte für ein Logo
-Hauptverwendungsgrund hat sich klarer herausgestellt
-Entscheidungshilfe
-für welche Mensa entscheide ich mich
-an welcher Mensa schmeckt das Essen heute am Besten
-Welches essen wir wo angeboten
-Login via Twitter mit Beispiel funktioniert
-Seiten müssen jedoch neu geladen werden und werden immer noch Error Nachrichten
-http://blog.habrador.com/2012/02/sign-in-with-twitter-tutorial.html
+- Besprechung mit Dominik Wigger
+	- Aktueller Standpunkt des Projekts
+	- Rahmenpunkte für ein Logo
+	- Hauptverwendungsgrund hat sich klarer herausgestellt
+		- Entscheidungshilfe
+		- für welche Mensa entscheide ich mich
+		-an welcher Mensa schmeckt das Essen heute am Besten
+		- Welches essen wir wo angeboten
+- Login via Twitter mit Beispiel funktioniert
+	- Seiten müssen jedoch neu geladen werden und werden immer noch Error Nachrichten [Tutorial](http://blog.habrador.com/2012/02/sign-in-with-twitter-tutorial.html)
 
 ## 2013-02-13
-Login via Twitter mit login-twitbook funktioniert
-Login via Facebook scheint zu funktionieren → muss noch in login-twitbook eingebunden werden
-Erste Logo Entwurf wurde erstellt
+- Login via Twitter mit login-twitbook funktioniert
+- Login via Facebook scheint zu funktionieren → muss noch in login-twitbook eingebunden werden
+- Erste Logo Entwurf wurde erstellt
 
 ## 2013-02-14
 Studierendenwerk (B.Nag) teilt uns mit, dass wir keinen Zugang zur Datenbank bekommen
@@ -61,31 +60,31 @@ SimpleHTMLDOM als PHP-Parser implementierung gefunden (http://simplehtmldom.sour
 erste Versuche auf dem Webserver mit Simplehtmldom
 
 ## 2013-02-15 bis 19
-Experimentieren und herausfinden wie Daten von Studierendenwerk-Seite mit Simplehtmldom ausgelesen werden kann
-Datum → trennen von Tag und dd.mm.jjjjj
-Unerwartete Ergebnisse tauchen beim auslesen der geparsten Tabellen-Inhalten aufgehalten
+- Experimentieren und herausfinden wie Daten von Studierendenwerk-Seite mit Simplehtmldom ausgelesen werden kann
+- Datum → trennen von Tag und dd.mm.jjjjj
+- Unerwartete Ergebnisse tauchen beim auslesen der geparsten Tabellen-Inhalten aufgehalten
 unklar woher zusätzliche leere Felder herkommen
-Le findet durch experimentieren heraus, dass Tag und Datum in den Feldern [18] und [19] abgespeichert sind
-Versuch auf Eigenschaften ->plaintext, ->innertext, ->outertext zeigen keine Resultate
-Le setzt ->plaintext an der richtigen Stelle ein und wir haben keine zusätzlichen leeren Felder mehr → Problem solved !!!
+- Le findet durch experimentieren heraus, dass Tag und Datum in den Feldern [18] und [19] abgespeichert sind
+- Versuch auf Eigenschaften ->plaintext, ->innertext, ->outertext zeigen keine Resultate
+- Le setzt ->plaintext an der richtigen Stelle ein und wir haben keine zusätzlichen leeren Felder mehr → Problem solved !!!
 
 ## 2013-02-22
-erste Konzeption der gesamten Datenbank
-wir haben nur eine ungefähre Ahnung wie die Tabellen in die Normalformen gebracht werden müssen
+- erste Konzeption der gesamten Datenbank
+- wir haben nur eine ungefähre Ahnung wie die Tabellen in die Normalformen gebracht werden müssen
 es besteht Nachholbedarf bei Relationalen Datenbanken → MySQL
 
 ## 2013-02-24
-Parser liest Daten in die Datenbank ein
-App liest Daten aus der Datenbank aus
+- Parser liest Daten in die Datenbank ein
+- App liest Daten aus der Datenbank aus
 
 ## 2013-02-26
-Treffen mit Prof. Plaß
-präsentieren des Zwischenstands
-Abgabe Projekt-Antrag → Unterschriften etc.
+- Treffen mit Prof. Plaß
+	- präsentieren des Zwischenstands
+	- Abgabe Projekt-Antrag → Unterschriften etc.
 
 ## 2013-03-03
-HomeScreen Icon und Splash Icon werden auf iPod → iOS 6 angezeigt
-alle Projekt-Ordner werden in lowercase bezeichnet
+- HomeScreen Icon und Splash Icon werden auf iPod → iOS 6 angezeigt
+- alle Projekt-Ordner werden in lowercase bezeichnet
 
 ---
 
