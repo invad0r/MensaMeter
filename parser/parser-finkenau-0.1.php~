@@ -93,9 +93,7 @@ for($i=0;$i<$nodes_length;$i++){
 	//stripslashes($essen);
 	//str_replace('"','',$essen);
 	$essen = str_replace(array('"'), ' ', $essen);
-	
-	// Kennzeichnung soll auch aus dem Text herausgeholt werden und seperat abgespeichert werden !
-	//$essen = preg_replace('/[0-9]/','',$essen);
+	$essen = preg_replace('/[0-9]/','',$essen);
 	
 	$insert = 'INSERT INTO '.$table_name.'(datum,beschreibung,bewertung) VALUES("'.$date.'","'.$essen.'",0)';
 		
