@@ -38,19 +38,46 @@ if (array_key_exists("login", $_GET)) {
 		<a href="index.php" data-icon="back">Back</a>
 		<h1>Mensa Meter</h1>
 	</header>
-	
-	
-		<p>Speiseplaene unserer Mensen und Cafes/Cafes Shops</p>
-			<div data-role="fieldcontain">
-				<ul id="mensen" data-role="listview" data-filter="true">
-				
-				<li><fieldset data-role="controlgroup"><input type="checkbox" name="checkbox-1" id="checkbox-12" class="custom" />
-					<label for="checkbox-12" data-iconpos="right">Finkenau</label></fieldset> </li>
-			</ul>
+<!-- ------------------------Content------------------------------------------------------------------------------- -->	
 
-			</div>
-			<input type="submit" name="submit" data-inline="true" value="Anzeigen" onclick="location.href='finkenau.php'">
+	<div data-role="content">
+<!-- das collapsible hier nur zum testen-->		
+		<div data-role="collapsible">
+			<h3>Collapsible Content</h3>
+			<p>yad yada yada yad xa ydad </p>		
+		</div>
+		
+		<ul data-role="listview">
+			<li data-role="list-divider">
+							Hamburg
+			</li>
+			<li>
+				<label for="Mensa A">Mensa A</label>
+				<input type="checkbox" id="Mensa A" name="Mensa" value="yes">
+			</li>
+			<li>
+				<label for="Mensa B">Mensa A</label>
+				<input type="checkbox" id="Mensa B" name="Mensa" value="yes">
+			</li>
+			<input type="submit" name="submit" data-inline="true" value="Anzeigen" onclick="location.href='#'">
+		</ul>
 
+		
+		
+	</div>	
+	
+	<!-- Before
+	<div data-role="fieldcontain">
+		<ul id="mensen" data-role="listview" data-filter="true"> 
+		
+		<li><fieldset data-role="controlgroup"><input type="checkbox" name="checkbox-1" id="checkbox-12" class="custom" />
+			<label for="checkbox-12" data-iconpos="right">Finkenau</label></fieldset> </li>
+	</ul>
+
+	</div>
+	<input type="submit" name="submit" data-inline="true" value="Anzeigen" onclick="location.href='finkenau.php'">
+	-->
+<!-- -------------------------------------------------------------------------------------------------------------- -->
 	<footer data-role="footer"  data-position="fixed">
 		<div data-role="navbar" data-iconpos="top" >
 		<ul>
