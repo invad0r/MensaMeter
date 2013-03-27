@@ -3,8 +3,11 @@
 
 Mobile WebApp die über Essen informiert und eine Bewertung ermöglicht.
 
-## Log
-Aktueller Stand und Aufgaben können dem [Log](https://github.com/invad0r/MensaMeter/blob/master/log.md) entnommen werden ?!
+## Index
+
+*[Documentation](https://github.com/invad0r/MensaMeter/tree/master/doc/documentation.md)
+*[ToDo's](https://github.com/invad0r/MensaMeter/tree/master/doc/todo.md)
+*[Log](https://github.com/invad0r/MensaMeter/tree/master/doc/log.md)
+*[Tutorials](https://github.com/invad0r/MensaMeter/tree/master/doc/tutorials.md)
 
 
-Some more information ...

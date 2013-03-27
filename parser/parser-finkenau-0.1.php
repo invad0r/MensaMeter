@@ -24,7 +24,7 @@ setlocale (LC_ALL, 'de_DE@euro', 'de_DE', 'deu_deu', 'ge');
 		Erzeugung mit mysqli
 		http://www.w3schools.com/php/php_mysql_create.asp
 	*/
-
+// Verbindung muss evtl garnicht in jeder File nochmal gemacht werden, wenn es über require dbconfig.php eingebunden wurde :O!!!!!
 	$connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysqli_error());
 	/* 
 		Eigentlich redundat weil ob schon "or die" abfrägt ob eine Verbinung zustande kommt

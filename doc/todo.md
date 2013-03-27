@@ -9,3 +9,4 @@ All the things that still need to be done. This is some kind of reminder :)
 ->'Pasta Don Pepe mit Räucherlachs und Spinat Grüne-Tagliatelle'
 ```
 - maybe not that usefull after all if you identifications should be next to food ?!
+- [jQuery Ajax MySQL Tabellen Editieren Tutorial](http://d4nza.de/blog/tutorials/jquery-ajax-mysql-tabellen-editieren-tutorial#comments)

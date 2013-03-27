@@ -1,4 +1,5 @@
 # Log
+
 Hier werden die Ereignisse und erreichten Meilensteine/Iterationen des Tages dokumentiert.
 ---
 
