@@ -2,6 +2,15 @@
 	include('simple_html_dom.php');
 	require '../config/dbconfig.php';
 
+	
+/*	Sprachsatz auf Deutsch umfriemeln, damit die Umlaute richtig geschrieben werden
+	von http://www.unforastero.de/jquery/das_trio_jquery-php-und-mysql.php#anker
+	keine Ahnung ob das für uns noch nützlich sein könnte ?!
+
+header('Content-Type: text/html; charset=iso-8859-1');
+setlocale (LC_ALL, 'de_DE@euro', 'de_DE', 'deu_deu', 'ge');
+*/
+	
 	//revision für das essen-table
 	$rev = 'r01';
 	$mensa = 'essen_finkenau';
@@ -15,7 +24,7 @@
 		Erzeugung mit mysqli
 		http://www.w3schools.com/php/php_mysql_create.asp
 	*/
-
+// Verbindung muss evtl garnicht in jeder File nochmal gemacht werden, wenn es über require dbconfig.php eingebunden wurde :O!!!!!
 	$connection = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD) or die(mysqli_error());
 	/* 
 		Eigentlich redundat weil ob schon "or die" abfrägt ob eine Verbinung zustande kommt
@@ -93,11 +102,20 @@ for($i=0;$i<$nodes_length;$i++){
 	//stripslashes($essen);
 	//str_replace('"','',$essen);
 	$essen = str_replace(array('"'), ' ', $essen);
-	
-	// Kennzeichnung soll auch aus dem Text herausgeholt werden und seperat abgespeichert werden !
+	// Kennzeichnung soll auch aus dem Text herausgeholt werden und seperat abgespeichert werden ! ## ## ##
 	//$essen = preg_replace('/[0-9]/','',$essen);
 	
-	$insert = 'INSERT INTO '.$table_name.'(datum,beschreibung,bewertung) VALUES("'.$date.'","'.$essen.'",0)';
+	
+	/*	Habe INSERT mit REPLACE getauscht um doppelte Einträge zu vermeiden
+		-> Laut Marketing von Stud.Werk werden die Essen am Tag auch editiert, dann sollte der vorhandene Eintrag
+		auch erneuert werden.
+		
+		Links:
+		- http://stackoverflow.com/questions/1361340/how-to-insert-if-not-exists-in-mysql
+		- http://code.openark.org/blog/mysql/replace-into-think-twice
+	*/
+	//$insert = 'INSERT INTO '.$table_name.'(datum,beschreibung,bewertung) VALUES("'.$date.'","'.$essen.'",0)';
+	$insert = 'REPLACE INTO '.$table_name.'(datum,beschreibung,bewertung) VALUES("'.$date.'","'.$essen.'",0)';
 		
 	if (mysqli_query($connection,$insert)){
 		echo "<br> Inserted successfully :):".$essen;

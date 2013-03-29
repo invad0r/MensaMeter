@@ -39,6 +39,7 @@ if (array_key_exists("login", $_GET)) {
 		<h1>Mensa Meter</h1>
 	</header>
 <!-- ------------------------Content------------------------------------------------------------------------------- -->	
+<<<<<<< HEAD
 	
 	<div data-role="content">
 <!-- das collapsible hier nur zum testen-->		
@@ -62,6 +63,31 @@ if (array_key_exists("login", $_GET)) {
 			<input type="submit" name="submit" data-inline="true" value="Anzeigen" onclick="location.href='#'">
 		</ul>
 
+=======
+
+	<div data-role="content">
+<!-- das collapsible hier nur zum testen-->		
+		<div data-role="collapsible">
+			<h3>Collapsible Content</h3>
+			<p>yad yada yada yad xa ydad </p>		
+		</div>
+		
+		<ul data-role="listview">
+			<li data-role="list-divider">
+							Hamburg
+			</li>
+			<li>
+				<label for="Mensa A">Mensa A</label>
+				<input type="checkbox" id="Mensa A" name="Mensa" value="yes">
+			</li>
+			<li>
+				<label for="Mensa B">Mensa A</label>
+				<input type="checkbox" id="Mensa B" name="Mensa" value="yes">
+			</li>
+			<input type="submit" name="submit" data-inline="true" value="Anzeigen" onclick="location.href='#'">
+		</ul>
+
+>>>>>>> ed750973fafa4c354acf1c7c43d5e9e08908a10a
 		
 		
 	</div>	
