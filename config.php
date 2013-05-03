@@ -4,7 +4,7 @@
  *  Paths
  */
 
-define('URL', 'http://localhost/NewPhpProject/');
+define('URL', 'http://localhost/mensameter-webapp/');
 define('LIBS', 'libs/');
 
 /**
