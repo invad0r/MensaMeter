@@ -1,0 +1,33 @@
+<?php
+
+/**
+ *  Paths
+ */
+
+define('URL', 'http://localhost/NewPhpProject/');
+define('LIBS', 'libs/');
+
+/**
+ * Database
+ */
+
+define('DB_TYPE', 'mysql');
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'mvc');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+
+
+/**
+ * Constants
+ * these are sitewide hashkeys, do not change these 
+ * -> used for passwords !!
+ * -> old login won't work after change !
+ */
+
+ 
+//this is for other hashkeys
+define('HASH_GENERAL_KEY', 'mixITup');
+
+//this is for db-passwords only
+define('HASH_PASSWORD_KEY', 'catsFLYhigh200miles');
