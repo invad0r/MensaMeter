@@ -4,3 +4,7 @@
 # Use wildcards as well
 *~
 *.swp
+
+
+# NetBeans specific
+nbproject
