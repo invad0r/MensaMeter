@@ -1,13 +1,13 @@
 </div>
 <div id="footer" data-role="footer" data-position="fixed">
     <div data-role="navbar" data-iconpos="top" >
-        <ul>
+        <ul id="navi">
             <?php if (Session::get('loggedIn') == false): ?>
                 <li><a href="<?php echo URL ?>index" data-icon="grid">Index</a></li>
 
             <?php endif; ?>
             <li><a href="<?php echo URL ?>mensa" data-icon="home">Mensen</a></li>
-            <li><a href="<?php echo URL ?>help" data-icon="home">Help</a></li>
+            <!--<li><a href="<?php echo URL ?>help" data-icon="home">Help</a></li>-->
             <?php if (Session::get('loggedIn') == true): ?>
                 <li><a href="<?php echo URL ?>dashboard" data-icon="star">Dashboard</a></li>
 
