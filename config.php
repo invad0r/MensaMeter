@@ -13,7 +13,7 @@ define('LIBS', 'libs/');
 
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'mvc');
+define('DB_NAME', 'danieltinney');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 
@@ -31,3 +31,11 @@ define('HASH_GENERAL_KEY', 'mixITup');
 
 //this is for db-passwords only
 define('HASH_PASSWORD_KEY', 'catsFLYhigh200miles');
+
+
+/**
+ *  URLS
+ *  for the canteens
+ */
+
+define('MENSEN', 'http://www.studierendenwerk-hamburg.de/studierendenwerk/de/essen/speiseplaene/');
