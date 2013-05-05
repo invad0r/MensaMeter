@@ -1,5 +1,7 @@
 <form id="myForm" action="<?php echo URL; ?>mensa/essen" method="post">
-    <div data-role="fieldcontain">
+    <!--Mit data-inset="true" werden Umlaute wieder angezeigt ??!!-->
+    <!--<div data-role="fieldcontain" data-inset="true">-->
+    <div data-role="listview" data-inset="true">
         <fieldset data-role="controlgroup">
             <?php
             foreach ($this->mensenList as $key => $value) {
@@ -10,11 +12,11 @@
                 echo '<input type="checkbox" name="' . $value['name'] . '" value="yes" id="' . $value['name'] . '" > ';
             }
             ?>
-
+            <input type="submit" value="Anzeigen" />
         </fieldset>
-    
 
-        <input type="submit" value="Anzeigen" />
+
+
 
     </div>
 </form>
