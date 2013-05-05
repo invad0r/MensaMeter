@@ -35,7 +35,11 @@ $(document).ready(function() {
 
         $.post(url, data, function(o) {
             //console.log('post:' + o.text + ' ' + o.id);
-            $('#listInserts').append('<div>' + o.text + '<a class="del" rel="' + o.id + '" href="#">X</a></div>');
+            $('#listInserts').append(
+                    '<div id="container">' +
+                        o.text + 
+                        '<a class="del" rel="' + o.id + '" href="#">[delete]</a>\n\
+                    </div>');
         }, 'json');
 
 
