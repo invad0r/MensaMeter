@@ -4,5 +4,4 @@ This is a project at my uni. The app is supposed to show people what meals are o
 
 
 
-
-HI le ich hoffe du kannst das hier .esen :) ^^
+hi le :)
