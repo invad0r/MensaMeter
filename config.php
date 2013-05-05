@@ -5,6 +5,7 @@
  */
 
 define('URL', 'http://localhost/mensameter-webapp/');
+//define('URL', 'http://mensameter.pstud1.mt.haw-hamburg.de/mensameter-webapp/');
 define('LIBS', 'libs/');
 
 /**
