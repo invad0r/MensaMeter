@@ -8,3 +8,6 @@
 
 # NetBeans specific
 nbproject/
+
+# Project specific
+doc/images/
