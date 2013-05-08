@@ -5,7 +5,7 @@ $(document).ready(function() {
         {
             console.log(o[i].text + "\n")
             //$('#listInserts').append('<div id="comment">' + o[i].text + '<a class="del" rel="' + o[i].id + '" href="#">X</a></div>');
-            $('#listInserts').append('<div>' + o[i].text + '<a class="del" rel="' + o[i].id + '" href="#">X</a></div>');
+            $('#listInserts').append('<div>' + o[i].text + '<a class="del" rel="' + o[i].id + '" href="#">[delete]</a></div>');
         }
 
         $('#content').on('click', '.del', function() {
