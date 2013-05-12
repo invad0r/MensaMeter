@@ -1,8 +1,9 @@
 
 <div data-role="listview" data-inset="true">
-    <?php
-    foreach ($this->essenList as $key => $value) {
-        echo "<li>" . $value['name'] . "</li>";
-    }
-    ?>
+
+essen
+<?php
+print_r($_POST['mensa']);
+?>
+
 </div>
