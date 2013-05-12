@@ -12,9 +12,12 @@ $(document).ready(function() {
             delItem = $(this);
             var id = $(this).attr('rel');
 
-            $.post('dashboard/xhrDeleteListing', {'id': id}, function() {
-                delItem.parent().remove();
-            });
+            $.post(
+                    'dashboard/xhrDeleteListing',
+                    {'id': id},
+                    function() {
+                        delItem.parent().remove();
+                    });
 
             return false;
         });
