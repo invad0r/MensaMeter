@@ -110,18 +110,6 @@ INSERT INTO `essen` (`id`, `datum`, `name`) VALUES
 (2, 'Freitag, 22.03.2013', 'Omelette gratiniert mit Tomate und Käse  (1 ,2 ,8 ,14 ,16 ,19 ,20 )  Rahmspinat  (14 ,19 ,20 ,22 )  und Kartoffelpüree  (3 ,20 )'),
 (3, 'Freitag, 22.03.2013', 'Lachsfilet gebraten  (17 )  mit Senfsoße (9 ,14 ,23 ,24 ) , Broccoli  (14 ,19 ,20 ,23 ,24 )  und Dillkartoffeln'),
 (4, 'Freitag, 22.03.2013', 'Pasta "Pollo" mit Geflügelbrust in Tomatensoße  (4 ,22 )  mit Eliche  (14 ,19 )  und Parmesan  (20 )'),
-(5, 'Freitag, 22.03.2013', 'Blattspinat natur Champignon-Zwiebelgemüse natur  (3 ,14 ,20 )  Ratatouillegemüse Princeßbohnen natur'),
-(0, 'Freitag, 22.03.2013', 'Vegetarische Kartoffelsuppe  (3 ,5 ,20 ,22 )'),
-(1, 'Freitag, 22.03.2013', 'Szegediner Gulasch  (14 ,20 )  mit Fusilli  (14 )'),
-(2, 'Freitag, 22.03.2013', 'Omelette gratiniert mit Tomate und Käse  (1 ,2 ,8 ,14 ,16 ,19 ,20 )  Rahmspinat  (14 ,19 ,20 ,22 )  und Kartoffelpüree  (3 ,20 )'),
-(3, 'Freitag, 22.03.2013', 'Lachsfilet gebraten  (17 )  mit Senfsoße (9 ,14 ,23 ,24 ) , Broccoli  (14 ,19 ,20 ,23 ,24 )  und Dillkartoffeln'),
-(4, 'Freitag, 22.03.2013', 'Pasta "Pollo" mit Geflügelbrust in Tomatensoße  (4 ,22 )  mit Eliche  (14 ,19 )  und Parmesan  (20 )'),
-(5, 'Freitag, 22.03.2013', 'Blattspinat natur Champignon-Zwiebelgemüse natur  (3 ,14 ,20 )  Ratatouillegemüse Princeßbohnen natur'),
-(0, 'Freitag, 22.03.2013', 'Vegetarische Kartoffelsuppe  (3 ,5 ,20 ,22 )'),
-(1, 'Freitag, 22.03.2013', 'Szegediner Gulasch  (14 ,20 )  mit Fusilli  (14 )'),
-(2, 'Freitag, 22.03.2013', 'Omelette gratiniert mit Tomate und Käse  (1 ,2 ,8 ,14 ,16 ,19 ,20 )  Rahmspinat  (14 ,19 ,20 ,22 )  und Kartoffelpüree  (3 ,20 )'),
-(3, 'Freitag, 22.03.2013', 'Lachsfilet gebraten  (17 )  mit Senfsoße (9 ,14 ,23 ,24 ) , Broccoli  (14 ,19 ,20 ,23 ,24 )  und Dillkartoffeln'),
-(4, 'Freitag, 22.03.2013', 'Pasta "Pollo" mit Geflügelbrust in Tomatensoße  (4 ,22 )  mit Eliche  (14 ,19 )  und Parmesan  (20 )'),
 (5, 'Freitag, 22.03.2013', 'Blattspinat natur Champignon-Zwiebelgemüse natur  (3 ,14 ,20 )  Ratatouillegemüse Princeßbohnen natur');
 
 -- --------------------------------------------------------
