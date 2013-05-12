@@ -13,8 +13,11 @@ class Mensa extends Controller {
         $this->view->render('mensa/index');
     }
     
+    public function xhrGetEssenList() {
+        $this->model->xhrGetEssenList();
+    }
+    
     public function essen(){
-        $this->view->essenList = $this->model->essenList();
-        $this->view->render('mensa/essen');
+        $this->view->render('mensa/essen');       
     }
 }
