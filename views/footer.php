@@ -17,7 +17,7 @@
 
                 <li><a href="<?php echo URL ?>dashboard/logout" data-icon="star">LogOut</a></li>
             <?php else: ?>
-                <li><a href="<?php echo URL ?>logIn" data-icon="star">Login</a></li>
+                <li><a href="<?php echo URL ?>login" data-icon="star">Login</a></li>
             <?php endif; ?>
         </ul>
     </div>
