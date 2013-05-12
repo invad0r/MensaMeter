@@ -11,7 +11,7 @@ class User_Model extends Model {
     }
 
     public function userSingleList($id) {
-        return $this->db->prepare('SELECT id, login, password, role FROM user WHERE id = :id', array(':id' => $id));
+        return $this->db->select('SELECT id, login, password, role FROM user WHERE id = :id', array(':id' => $id));
     }
 
     public function create($data) {
