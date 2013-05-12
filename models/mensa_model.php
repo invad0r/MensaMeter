@@ -14,7 +14,7 @@ class Mensa_Model extends Model {
     }
     
     public function essenList(){
-        return $this->db->select('SELECT name FROM essen_finkenau_r01');
+        return $this->db->select('SELECT name FROM essen');
 
     }
     
