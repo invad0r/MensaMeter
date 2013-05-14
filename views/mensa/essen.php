@@ -1,8 +1,21 @@
 
 <div data-role="listview" data-inset="true">
     <?php
-    foreach ($this->essenList as $key => $value) {
-        echo "<li>" . $value['name'] . "</li>";
+    echo "<table border='1'>
+<tr>
+<th>Kategorie</th>
+<th>Speise</th>
+<th>Preis</th>
+<th>Bewertung</th>
+</tr>";
+    foreach ($this->essenList as $key => $value) { 
+        echo "<tr>";
+        echo "<td>  </td>";
+        echo "<td>" . $value['name'] . "</td>";
+        echo "</tr>";
+        
     }
+echo "</table>";
     ?>
+ 
 </div>
