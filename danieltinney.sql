@@ -52,7 +52,8 @@ CREATE TABLE IF NOT EXISTS `essen` (
   `id` int(11) NOT NULL,
   `datum` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `kat` varchar(100)COLLATE utf8_unicode_ci NOT NULL,
+  `kat_id` int NOT NULL,
+  `mensa_id` int NOT NULL,
   `preis` float NOT NULL,
   `bewertung` int (10)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -61,8 +62,8 @@ CREATE TABLE IF NOT EXISTS `essen` (
 -- Daten für Tabelle `essen`
 --
 
-INSERT INTO `essen` (`id`, `datum`, `name`,`kat`) VALUES
-(1, 'Donnerstag, 28.02.2013', 'Kohlrabigemüse in Rahm  (14 ,20 ) , Kartoffelgratin  (1 ,2 ,3 ,5 ,16 ,20 ) , Mandelbroccoli  (21 ) , Paprika-Zwiebelgemüse','Gemüse-Bar'),
+INSERT INTO `essen` (`id`, `datum`, `name`) VALUES
+(1, 'Donnerstag, 28.02.2013', 'Kohlrabigemüse in Rahm  (14 ,20 ) , Kartoffelgratin  (1 ,2 ,3 ,5 ,16 ,20 ) , Mandelbroccoli  (21 ) , Paprika-Zwiebelgemüse'),
 (2, 'Donnerstag, 28.02.2013', 'Pasta "Pizzaiola" mit Mozzarellakäse  (4 ,20 ,22 )  hausgemachter Tomatensoße  (4 ,19 ) , Parmesan  (20 )  und grünen Tagliatelle  (14 ,19 )'),
 (3, 'Donnerstag, 28.02.2013', 'Indischer Spinat mit roten Linsen  (3 ,20 )  und mit Korianderreis'),
 (4, 'Donnerstag, 28.02.2013', 'Pasta "Martigiana" mit Speck und Tomaten  (2 ,3 ,22 ) , Parmesan  (20 )  und grünen Tagliatelle  (14 ,19 )'),
@@ -168,3 +169,28 @@ INSERT INTO `user` (`id`, `login`, `password`, `role`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- -----------------------------------------------------------
+
+-- Tabellenstruktur für Tabelle `kategorie`
+--
+CREATE TABLE IF NOT EXISTS `kategorie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+
+--
+-- Daten für Tabelle `kategorie`
+--
+INSERT INTO `kategorie` (`id`, `name`) VALUES
+(1, 'Aus dem Suppentopf und Süßes'),
+(2, 'Gut und Günstig'),
+(3, 'Beliebt und gerne gegessen'),
+(4, 'Vegetarisch'),
+(5, 'Campus Spezial'),
+(6, 'Pasta-Bar'),
+(7, 'Gemüse-Bar'),
+(8, 'Aus dem Wok');
+
+
