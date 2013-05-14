@@ -15,7 +15,7 @@ class Mensa extends Controller {
     
     public function essen(){
         $this->view->essenList = $this->model->essenList();
-        $this->view->kategorie = $this->model->kategorie();
+        
         $this->view->render('mensa/essen');
     }
 }

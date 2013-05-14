@@ -17,9 +17,6 @@ class Mensa_Model extends Model {
         return $this->db->select('SELECT name FROM essen');
 
     }
-    public function kategorie(){
-        return $this ->db->select ('SELECT kat FROM essen');
-    }
     
 //    public function addMensa($data){
 //        $this->db->insert('mensa', array(
