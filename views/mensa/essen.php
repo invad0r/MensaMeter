@@ -8,14 +8,19 @@
 <th>Preis</th>
 <th>Bewertung</th>
 </tr>";
+  
     foreach ($this->essenList as $key => $value) { 
+        
         echo "<tr>";
-        echo "<td>  </td>";
+        echo "<td> </td>";
+        
         echo "<td>" . $value['name'] . "</td>";
         echo "</tr>";
         
+        
     }
 echo "</table>";
+
     ?>
  
 </div>

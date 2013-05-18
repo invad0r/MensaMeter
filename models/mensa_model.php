@@ -14,10 +14,13 @@ class Mensa_Model extends Model {
     }
     
     public function essenList(){
-        return $this->db->select('SELECT name FROM essen');
+        return $this->db->select('SELECT kat_id,name FROM essen');
 
     }
-    
+    public function kategorie() {
+        return $this ->db -> select ('SELECT id, name FROM kategorie');
+    }
+  
 //    public function addMensa($data){
 //        $this->db->insert('mensa', array(
 //            'name' => $data['name'],
