@@ -177,20 +177,22 @@ INSERT INTO `user` (`id`, `login`, `password`, `role`) VALUES
 CREATE TABLE IF NOT EXISTS `kategorie` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+   `preis_std` float,
+   `preis_mit` float,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
 
 --
 -- Daten für Tabelle `kategorie`
 --
-INSERT INTO `kategorie` (`id`, `name`) VALUES
-(1, 'Aus dem Suppentopf und Süßes'),
-(2, 'Gut und Günstig'),
-(3, 'Beliebt und gerne gegessen'),
-(4, 'Vegetarisch'),
-(5, 'Campus Spezial'),
-(6, 'Pasta-Bar'),
-(7, 'Gemüse-Bar'),
-(8, 'Aus dem Wok');
+INSERT INTO `kategorie` (`id`, `name`,`preis_std`,`preis_mit`) VALUES
+(1, 'Aus dem Suppentopf und Süßes',1.20,2.20),
+(2, 'Gut und Günstig',1.85,2.95),
+(3, 'Beliebt und gerne gegessen',2.20,3.30),
+(4, 'Vegetarisch',2.20,3.30),
+(5, 'Campus Spezial',3.95,4.65),
+(6, 'Pasta-Bar',0.45,0.65),
+(7, 'Gemüse-Bar',0.45,0.65),
+(8, 'Aus dem Wok',3.30,3.90);
 
 
