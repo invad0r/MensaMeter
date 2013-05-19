@@ -4,24 +4,54 @@
  * 
  */
 
-	
-$(document).on('pagebeforecreate', function(){
-    $("#mensaList").attr("data-role","listview");
+
+$(document).on('pagebeforecreate', function() {
+    $("fieldset").attr("data-role", "controlgroup");
+    $("#mensaList").attr("data-role", "listview").attr("data-inset", "true");
 });
 
 
 
-$(document).ready(function(){
-   // alert(1);
-
-//    < !-- Initialize from document ready event //-->
-//        $("header").attr("data-role", "header");
-//        $("section div:first").attr("data-role", "content");
-//        $("footer").attr("data-role", "footer");
+$(document).ready(function() {
+    // alert(1);
+//    function showValues() {
+//        var str = $("form").serialize();
+//        $("#results").text(str);
+//    }
+//    $("input[type='checkbox']").on("click", showValues);
+//    $("select").on("change", showValues);
+//    showValues();
+    
+    
+//    $('#myForm').submit(function(){
+//        var checked = $("input[type='checkbox']").attr('id');
 //        
-//        data-role="listview"
-   // $("ul").attr("data-role","listview");
-
+//        $.ajax({
+//            type:"post",
+//            url:"mensa.php",
+//            data: {checked: checked},
+//            datatype:"json",
+//            success: function(){
+//                alert("data was sent");
+//                //$.mobile.changePage("essen.php");
+//            }
+//        });
+//    });
+//    
+//    $('#myForm').submit(function(){
+//        var id = $("input[type='checkbox']").attr('id');
+//        //alert(id);
+//        $.post(
+//                'mensa/essenList',
+//                {'id': id},
+//                function(){
+//                    alert (id);
+//                }
+//        ),'json';
+////            return false;
+//    });
+    
+    
 });
 
 

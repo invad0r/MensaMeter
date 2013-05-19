@@ -1,4 +1,3 @@
-
     <form action="login/run" method="post">
         <fieldset data-role="controlgroupd" data-inset="true">
             <label>Login</label><input type="text" name="login" /><br />
@@ -6,4 +5,3 @@
             <input type="submit" value="Login"/>
         </fieldset>
     </form>
-s

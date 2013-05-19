@@ -1,4 +1,9 @@
 $(document).ready(function() {
+//TODO: Dashboard kommentar werden erst nach refresh angezeigt -> .on("pageshow",..) könnte helfen ?!
+//    $('#class').on("pageshow",function(){
+//        //Alles was hier steht wird ausgeführt, wenn die Seite angezeigt wird
+//    })
+    
     $.get('dashboard/xhrGetListings', function(o) {
 
         for (var i = 0; i < o.length; i++)

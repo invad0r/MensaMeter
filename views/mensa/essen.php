@@ -1,5 +1,6 @@
 
 <div data-role="listview" data-inset="true">
+
     <?php
     echo "<table border='1'>
 <tr>
@@ -12,15 +13,14 @@
     foreach ($this->essenList as $key => $value) { 
         
         echo "<tr>";
-        echo "<td> </td>";
-        
+        echo "<td> </td>";      
         echo "<td>" . $value['name'] . "</td>";
-        echo "</tr>";
-        
-        
+        echo "</tr>";     
     }
-echo "</table>";
+    echo "</table>";
 
     ?>
  
 </div>
+
+
