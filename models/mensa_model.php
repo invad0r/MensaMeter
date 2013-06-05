@@ -7,7 +7,7 @@ class Mensa_Model extends Model {
     }
      
     public function essenList(){
-        return $this->db->select('SELECT kat_id,name FROM essen');
+        return $this->db->select('SELECT mensa_id,kat_id,name FROM essen');
     }
 
    public function mensenList() {
@@ -24,8 +24,8 @@ class Mensa_Model extends Model {
        return $sth->fetchAll();
     }
 
-    public function kategorie() {
-        return $this ->db -> select ('SELECT id, name FROM kategorie');
+    public function kategorieList() {
+        return $this ->db -> select ('SELECT id name FROM kategorie');
     }
   
 //    public function addMensa($data){
