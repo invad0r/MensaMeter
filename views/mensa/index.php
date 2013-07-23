@@ -4,7 +4,7 @@
             <?php
                 foreach ($this->mensenList as $key => $value) {
                     echo '<label for ="' . $value['id'] . '">' . $value['name'] . '</label>';
-                    echo '<input type="checkbox" id="' . $value['id'] . '" name="mensa" value="'.$value['id'].'"> ';
+                    echo '<input type="checkbox" id="' . $value['id'] . '" name= "mensa" value="'.$value['id'].'"> ';
                 }
             ?>
             <input type="submit" value="Anzeigen" />
@@ -15,6 +15,7 @@
 <p><tt id="results"></tt></p>
 
 <?php
+//mysql_select_db(danieltinney) or die ( "Unable to select database");
 //foreach ($this->mensenList as $key => $value) {
 //    echo $value['id']." ".$value['name']."<br />";
 //}

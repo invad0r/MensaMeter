@@ -25,7 +25,11 @@ class Mensa_Model extends Model {
     }
 
     public function kategorieList() {
-        return $this ->db -> select ('SELECT id name FROM kategorie');
+        return $this ->db -> select ('SELECT id ,name FROM kategorie');
+    }
+    public function showessen()
+    {
+        return $this ->db -> select ('SELECT id, name ,preis_std, preis_mit FROM kategorie');
     }
   
 //    public function addMensa($data){
