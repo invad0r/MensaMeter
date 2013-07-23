@@ -20,11 +20,8 @@ class Mensa extends Controller {
     public function essen(){
 
         $this->view->essenList = $this->model->essenList();
-<<<<<<< HEAD
-        $this->view->kategorie = $this->model->kategorieList();
-=======
         $this->view->kategorieList = $this->model->kategorieList();
->>>>>>> 15325bc9deb7a2fd9043aa8f415c6995a923597e
+
         $this->view->render('mensa/essen');     
 
     }
