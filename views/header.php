@@ -16,7 +16,6 @@
         <link rel="apple-touch-icon-precomposed" href="<?php echo URL ?>public/imges/touch/apple-touch-icon-57x57-precomposed.png">
         <link rel="shortcut icon" href="<?php echo URL ?>public/imges/touch/apple-touch-icon.png">
         
-<!--        <link rel="stylesheet" href="<?php echo URL ?>public/css/default.css" />-->
         <link rel="stylesheet" href="<?php echo URL ?>public/css/vendor/jquery.mobile-1.3.1.min.css" />
         <link rel="stylesheet" href="<?php echo URL ?>public/css/vendor/jquery.mobile.structure-1.3.1.min.css" />
         <link rel="stylesheet" href="<?php echo URL ?>public/css/vendor/jquery.mobile.theme-1.3.1.min.css" />
