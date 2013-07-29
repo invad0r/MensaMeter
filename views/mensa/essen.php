@@ -34,13 +34,9 @@
                     echo "<td>" .$value['name']. "</td>";
                     echo "<td>".$row['preis_std']. "</td>";
                     echo "<td>".$row['preis_mit']. "</td>";
-<<<<<<< HEAD
                     echo "<td> <a href='".URL."bewerten'> Zum Bewerten </a>  </td>";   
-=======
-//                    echo "<td> <a href='views/bewerten'> Zum Bewerten </a>  </td>";   
-                    echo "<td> <a href='".URL."bewerten'> Zum Bewerten </a>  </td>";
                     
->>>>>>> 0bd8a95bd9a70f7ab09d2e9c303580de124528c3
+
                     }
                 }
                 $i++;   
