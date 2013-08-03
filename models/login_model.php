@@ -35,8 +35,15 @@ class Login_Model extends Model {
             Session::init();
             Session::set('role', $data['role']);
             Session::set('loggedIn', true);
+            $vorseite=$_SERVER['HTTP_REFERER'];
+            if($vorseite=="http://localhost/mensameter-webapp/bewerten"){
+             header('location:../bewerten');
+            }else
+            {
             header ('location: ../dashboard');
-        }else{
+            
+            }
+         }else{
             //show an error!
             header ('location: ../login');
         }
