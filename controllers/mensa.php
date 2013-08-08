@@ -26,7 +26,11 @@ class Mensa extends Controller {
 
     }
     
-    public function hello($name){
+    public function hello($name) {
         print json_encode("hello :)" . $name); 
+    }
+    
+    public function hi() {
+        echo json_encode('hi');
     }
 }

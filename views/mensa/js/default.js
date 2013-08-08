@@ -23,7 +23,7 @@ $(document).ready(function() {
             var foo = $('#name');
             console.log(foo);
 
-            $('#hello').append('foo' + data);
+            $('#mensen').append('foo' + data);
         }
     });
 
@@ -32,9 +32,11 @@ $(document).ready(function() {
         url: 'mensa/xhrGetEssenList',
         type: 'POST',
         success: function (r){
+            console.log(r);
             var food = JSON.parse(r);
+//            var food = $.parseJSON(r);
             console.log(food);
-            $('#hello').append('<p>' + food[2].name + '</p>');
+            $('#essen').append('<p>' + food[2].name + '</p>');
         }
     });
     // alert(1);
