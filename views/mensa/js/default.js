@@ -11,20 +11,30 @@ $(document).on('pagebeforecreate', function() {
 
 $(document).ready(function() {
     console.log("is ready!");
-    
+
     var name = "le";
-    
+
     $.ajax({
-        url:'mensa/hello/'+name,
-        type:'GET',
+        url: 'mensa/hello/' + name,
+        type: 'POST',
         success: function(result) {
             var data = JSON.parse(result);
             console.log(data);
-//            $('#name').append(data);
             var foo = $('#name');
             console.log(foo);
-            
+
             $('#hello').append('foo' + data);
+        }
+    });
+
+
+    $.ajax({
+        url: 'mensa/xhrGetEssenList',
+        type: 'POST',
+        success: function (r){
+            var food = JSON.parse(r);
+            console.log(food);
+            $('#hello').append('<p>' + food[2].name + '</p>');
         }
     });
     // alert(1);
@@ -35,8 +45,8 @@ $(document).ready(function() {
 //    $("input[type='checkbox']").on("click", showValues);
 //    $("select").on("change", showValues);
 //    showValues();
-    
-    
+
+
 //    $('#myForm').submit(function(){
 //        var checked = $("input[type='checkbox']").attr('id');
 //        
@@ -64,6 +74,6 @@ $(document).ready(function() {
 //        ),'json';
 ////            return false;
 //    });
-    
-    
+
+
 });
