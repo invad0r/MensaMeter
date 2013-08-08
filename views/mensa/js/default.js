@@ -4,15 +4,29 @@
  * 
  */
 
-
 $(document).on('pagebeforecreate', function() {
     $("fieldset").attr("data-role", "controlgroup");
     $("#mensaList").attr("data-role", "listview").attr("data-inset", "true");
 });
 
-
-
 $(document).ready(function() {
+    console.log("is ready!");
+    
+    var name = "le";
+    
+    $.ajax({
+        url:'mensa/hello/'+name,
+        type:'GET',
+        success: function(result) {
+            var data = JSON.parse(result);
+            console.log(data);
+//            $('#name').append(data);
+            var foo = $('#name');
+            console.log(foo);
+            
+            $('#hello').append('foo' + data);
+        }
+    });
     // alert(1);
 //    function showValues() {
 //        var str = $("form").serialize();
@@ -53,5 +67,3 @@ $(document).ready(function() {
     
     
 });
-
-

@@ -25,4 +25,8 @@ class Mensa extends Controller {
         $this->view->render('mensa/essen');     
 
     }
+    
+    public function hello($name){
+        print json_encode("hello :)" . $name); 
+    }
 }

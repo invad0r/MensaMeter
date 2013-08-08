@@ -14,10 +14,4 @@
 
 <p><tt id="results"></tt></p>
 
-<?php
-//mysql_select_db(danieltinney) or die ( "Unable to select database");
-//foreach ($this->mensenList as $key => $value) {
-//    echo $value['id']." ".$value['name']."<br />";
-//}
-//print_r($this->mensenList);
-?>
+<div id="hello">,,..</div>
