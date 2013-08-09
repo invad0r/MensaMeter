@@ -4,41 +4,22 @@
  * 
  */
 
+var showFood;
+
+
 $(document).on('pagebeforecreate', function() {
-    $("fieldset").attr("data-role", "controlgroup");
-    $("#mensaList").attr("data-role", "listview").attr("data-inset", "true");
+//    $("fieldset").attr("data-role", "controlgroup");
+//    $("#mensaList").attr("data-role", "listview").attr("data-inset", "true");
+showFood();
 });
 
 $(document).ready(function() {
     console.log("is ready!");
-
-    var name = "le";
-
-    $.ajax({
-        url: 'mensa/hello/' + name,
-        type: 'POST',
-        success: function(result) {
-            var data = JSON.parse(result);
-            console.log(data);
-            var foo = $('#name');
-            console.log(foo);
-
-            $('#mensen').append('foo' + data);
-        }
-    });
+    
 
 
-    $.ajax({
-        url: 'mensa/xhrGetEssenList',
-        type: 'POST',
-        success: function (r){
-            console.log(r);
-            var food = JSON.parse(r);
-//            var food = $.parseJSON(r);
-            console.log(food);
-            $('#essen').append('<p>' + food[2].name + '</p>');
-        }
-    });
+
+
     // alert(1);
 //    function showValues() {
 //        var str = $("form").serialize();
@@ -79,3 +60,28 @@ $(document).ready(function() {
 
 
 });
+
+
+showFood = function() {
+    $.ajax({
+        url: 'mensa/xhrGetMensen',
+        type: 'POST',
+        success: function(r) {
+            var food, i, len;
+
+            food = JSON.parse(r); //alternative: var food = $.parseJSON(r);
+
+            for (i = 0, len = food.length; i < len; i++) {
+                // @TODO: herausfinden warum manche Einträge mit null zurückgegeben werden
+                if (food[i].name !== null) {
+                    $('#mensen').append(
+                            '<li>' +
+                            '<input type="checkbox" id="' + food[i].name + '-' + i + '" name="mensa" value="' + i + '">' +
+                            '<label for="' + i + '">' + food[i].name + '</label>' +
+                            '</li>'
+                            );
+                }
+            }
+        }
+    });
+};
