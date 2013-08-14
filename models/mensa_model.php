@@ -25,26 +25,28 @@ class Mensa_Model extends Model {
     }
 
     public function kategorieList() {
-        return $this ->db -> select ('SELECT id ,name FROM kategorie');
+        return $this ->db -> select ('SELECT id ,name,preis_std,preis_mit FROM kategorie');
     }
-    public function showessen()
-    {
-        return $this ->db -> select ('SELECT id, name ,preis_std, preis_mit FROM kategorie');
-    }
-  
+    
 //    public function addMensa($data){
 //        $this->db->insert('mensa', array(
 //            'name' => $data['name'],
 //            'bewertung' => $data['bewertung']
 //        ));
 //    }
-
-
+    
     function xhrGetEssenList() {
         $sth = $this->db->prepare('SELECT * FROM essen');
         $sth->setFetchMode(PDO::FETCH_ASSOC);
         $sth->execute();
-        $data = $sth->fetchAll();
-        echo json_encode($data);
+        return $this;
+        //$data = $sth->fetchAll();
+       //echo json_encode($data);
+    }
+    public function xhrGetKategorie(){
+        $id = $_POST['id'];
+        $sth= $this->db->prepare('SELECT name,preis_std,preis_mit FROM kategorie WHERE id = "'.$id.'"');
+        $sth->setFetchMode(PDO::FETCH_ASSOC);
+        $sth->execute();
     }
 }

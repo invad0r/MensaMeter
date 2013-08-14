@@ -8,8 +8,7 @@
     //get kategorie_id from database to a array
     $array_katid=array();
     foreach ($this->kategorieList as $key1 => $value1 ){
-        array_push($array_katid,$value1['id']);
-      
+        array_push($array_katid,$value1['id']);  
     }
     echo "<table border='1'>
         <tr>
@@ -28,15 +27,12 @@
             while ($i<=sizeof($array_katid)){
                 if($value['kat_id']==$array_katid[$i]){
                     $result = mysql_query("SELECT name,preis_std,preis_mit FROM kategorie WHERE id = '$array_katid[$i]'");
-                    while($row=  mysql_fetch_array($result)){
-                    
+                    while($row=  mysql_fetch_array($result)){        
                     echo "<td>" .$row['name']. "</td>";
-                    echo "<td>" .$value['name']. "</td>";
+                    echo "<td id='speise'><a href='".URL."bewerten'> "  .$value['name']. "</a></td>";
                     echo "<td>".$row['preis_std']. "</td>";
                     echo "<td>".$row['preis_mit']. "</td>";
-                    echo "<td> <a href='".URL."bewerten'> Zum Bewerten </a>  </td>";   
-                    
-
+                    echo "<td>".$row['bewertung']. "</td>";                 
                     }
                 }
                 $i++;   
