@@ -7,10 +7,6 @@ class Controller {
     function __construct() {
         //echo "Main Controller<br />";
         $this->view = new View();
-        
-        if(file_exists('xyz')){
-            require 'models/'.$name.'_model.php';
-        }
     }
     
     public function loadModel($name){

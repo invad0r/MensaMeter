@@ -9,8 +9,13 @@ class Mensa extends Controller {
 
     function index() {
         //view->propertyName muss gleich model-functionName() sein !!
-        $this->view->mensenList = $this->model->mensenList();      
+        $this->view->mensenList = $this->model->xhrGetMensen();      
         $this->view->render('mensa/index');
+    }
+    
+    public function xhrGetMensen(){
+      $foo =  $this->model->xhrGetMensen();
+      echo json_encode($foo);  
     }
     
     public function xhrGetEssenList() {
@@ -24,5 +29,13 @@ class Mensa extends Controller {
 
         $this->view->render('mensa/essen');     
 
+    }
+    
+    public function hello($name) {
+        print json_encode("hello :)" . $name); 
+    }
+    
+    public function hi() {
+        echo json_encode('hi');
     }
 }

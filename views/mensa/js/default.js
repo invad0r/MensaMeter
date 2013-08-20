@@ -4,15 +4,22 @@
  * 
  */
 
+var showFood;
+
 
 $(document).on('pagebeforecreate', function() {
-    $("fieldset").attr("data-role", "controlgroup");
-    $("#mensaList").attr("data-role", "listview").attr("data-inset", "true");
+//    $("fieldset").attr("data-role", "controlgroup");
+//    $("#mensaList").attr("data-role", "listview").attr("data-inset", "true");
+showFood();
 });
 
-
-
 $(document).ready(function() {
+    console.log("is ready!");
+    
+
+
+
+
     // alert(1);
 //    function showValues() {
 //        var str = $("form").serialize();
@@ -21,8 +28,8 @@ $(document).ready(function() {
 //    $("input[type='checkbox']").on("click", showValues);
 //    $("select").on("change", showValues);
 //    showValues();
-    
-    
+
+
 //    $('#myForm').submit(function(){
 //        var checked = $("input[type='checkbox']").attr('id');
 //        
@@ -50,8 +57,31 @@ $(document).ready(function() {
 //        ),'json';
 ////            return false;
 //    });
-    
-    
+
+
 });
 
 
+showFood = function() {
+    $.ajax({
+        url: 'mensa/xhrGetMensen',
+        type: 'POST',
+        success: function(r) {
+            var food, i, len;
+
+            food = JSON.parse(r); //alternative: var food = $.parseJSON(r);
+
+            for (i = 0, len = food.length; i < len; i++) {
+                // @TODO: herausfinden warum manche Einträge mit null zurückgegeben werden
+                if (food[i].name !== null) {
+                    $('#mensen').append(
+                            '<li>' +
+                            '<input type="checkbox" id="' + food[i].name + '-' + i + '" name="mensa" value="' + i + '">' +
+                            '<label for="' + i + '">' + food[i].name + '</label>' +
+                            '</li>'
+                            );
+                }
+            }
+        }
+    });
+};

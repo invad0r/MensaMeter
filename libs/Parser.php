@@ -2,6 +2,15 @@
 
 class Parser {
 
+    function __construct() {
+        
+    }
+    
+    
+    public function parseMensaName ($url) {
+        
+    }
+
     public function insertMensa() {
         /*
          * Der Parser Teil
@@ -40,14 +49,12 @@ class Parser {
         $st = $this->db->prepare('INSERT INTO mensa (id, name, bewertung) VALUES (:name,:bewertung)');
         $st->execute(array(':name' => "text", ':bewertung' => 0));
     }
-    
-    
+
     /**
      * 
      * Parser sollte wie user ähhnlich sein
      * 
      */
-
 //    public function parseURL() {
 //        // damit keine E_WARNING : type 2 -- DOMDocument::loadHTMLFile() -> fehlerhaftes HTML ?!
 //        libxml_use_internal_errors(true);
@@ -79,7 +86,6 @@ class Parser {
 //        $this->mensa = $mensen;
 //        //print_r($this->mensa);
 //    }
-
 }
 
 ?>
