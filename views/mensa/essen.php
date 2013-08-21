@@ -1,8 +1,9 @@
-
-<div data-role="listview" data-inset="true">
+<form id="myForm" action="<?php echo URL; ?>bewerten" method="post">
+<div id="essenList">
 
 <?php
     $q=$_POST["mensa"];
+    //echo $q;
     mysql_connect(localhost,root);
     mysql_select_db(danieltinney) or die ( "Unable to select database");
     //get kategorie_id from database to a array
@@ -29,7 +30,9 @@
                     $result = mysql_query("SELECT name,preis_std,preis_mit FROM kategorie WHERE id = '$array_katid[$i]'");
                     while($row=  mysql_fetch_array($result)){        
                     echo "<td>" .$row['name']. "</td>";
-                    echo "<td id='speise'><a href='".URL."bewerten'> "  .$value['name']. "</a></td>";
+                    echo "<td >";
+                    echo '<input type="submit" name ="speise" id="' . $value['id'] . '"  value="'.$value['name'].'"> ';
+                    echo"</td>";
                     echo "<td>".$row['preis_std']. "</td>";
                     echo "<td>".$row['preis_mit']. "</td>";
                     echo "<td>".$row['bewertung']. "</td>";                 
@@ -41,6 +44,7 @@
         }
     }
     echo "</table>";
+    
 ?>
-
 </div>
+    </form>

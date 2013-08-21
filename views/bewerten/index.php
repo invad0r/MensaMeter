@@ -1,20 +1,16 @@
 
-<form action="<?php echo URL; ?>bewerten/bewertung" method="post">
+<form id="bewerten" action="<?php echo URL; ?>bewerten/bewertung" method="post">
      <?php if (Session::get('loggedIn') == true): ?>
-       <div id="bewertung">
-           <script>        
-    var veg = document.getElementById("speise").innerText;
-    alert(veg);
-    $(document).ready(function()  
-   {  
-       $.post("http://localhost/mensameter-webapp/bewerten/index.php", { js: veg});  
-   });      </script>
-    <?php $_SESSION['jsvalue'] = $_POST['js'];
-    echo $_SESSION['jsvalue'];
-    echo "1234";
+       <div id="bewertung"> 
+    <?php
+    session_start();
+    $p=$_POST["speise"];
+    $_SESSION['test']=$p;
+    //echo $p;
+    
     ?>
            <fieldset>
-	<label for="punkt"> Bewertung abgeben:</label>
+	<label for="punkt"> Bewertung abgeben für: <?php echo $p;?> </label>
 	<input type="range" name="punkt" id="punkt" value="0" min="0" max="10" data-theme="a" data-track-theme="b" />
           
         <input type="submit" value="Absenden" />   
