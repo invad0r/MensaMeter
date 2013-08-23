@@ -2,6 +2,7 @@
 <div id="essenList">
 
 <?php
+    session_start();
     $q=$_POST["mensa"];
     //echo $q;
     mysql_connect(localhost,root);
@@ -11,6 +12,7 @@
     foreach ($this->kategorieList as $key1 => $value1 ){
         array_push($array_katid,$value1['id']);  
     }
+    //$_SESSION['katarray']=$array_katid;
     echo "<table border='1'>
         <tr>
         <th>Kategorie</th>
@@ -35,7 +37,7 @@
                     echo"</td>";
                     echo "<td>".$row['preis_std']. "</td>";
                     echo "<td>".$row['preis_mit']. "</td>";
-                    echo "<td>".$row['bewertung']. "</td>";                 
+                    echo "<td>".$value['bewertung']. "</td>";                 
                     }
                 }
                 $i++;   

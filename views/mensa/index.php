@@ -3,7 +3,7 @@
         <fieldset>
 <?php
                foreach ($this->mensenList as $key => $value) {
-                   echo '<label for ="' . $value['id'] . '">' . $value['name'] . '</label>';
+                   echo '<label for ="' . $value['id'] . '">' . $value['name_mensa'] . '</label>';
                    echo '<input type="checkbox" id="' . $value['id'] . '" name= "mensa" value="'.$value['id'].'"> ';
                }
 ?>

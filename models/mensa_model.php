@@ -7,9 +7,8 @@ class Mensa_Model extends Model {
     }
      
     public function essenList(){
-        return $this->db->select('SELECT mensa_id,kat_id,name FROM essen');
+        return $this->db->select('SELECT mensa_id,kat_id,name, bewertung FROM essen');
     }
-
    public function xhrGetMensen() {
 
 //        return $this->db->select('SELECT id, name FROM mensa WHERE id = :id',array(':id' => 1));
@@ -18,7 +17,7 @@ class Mensa_Model extends Model {
 //        $sth->execute(array(
 //            ':name' => "Finkenau"
 //            ));
-        $sth = $this->db->prepare('SELECT id, name FROM mensa');
+        $sth = $this->db->prepare('SELECT id, name_mensa FROM mensa');
         $sth->execute();
 
        return $sth->fetchAll();
