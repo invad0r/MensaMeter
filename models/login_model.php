@@ -36,7 +36,7 @@ class Login_Model extends Model {
             Session::set('role', $data['role']);
             Session::set('loggedIn', true);
             $vorseite=$_SERVER['HTTP_REFERER'];
-            if($vorseite=="http://localhost/mensameter-webapp/bewerten"){
+            if($vorseite=="http://localhost/mensameter-webapp-final/bewerten"){
              header('location:../bewerten');
             }else
             {

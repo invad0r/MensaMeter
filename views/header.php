@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <title>Mensa Meter</title>
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">

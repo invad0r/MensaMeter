@@ -31,7 +31,7 @@
                     while($row=  mysql_fetch_array($result)){        
                     echo "<td>" .$row['name']. "</td>";
                     echo "<td >";
-                    echo '<input type="submit" name ="speise" id="' . $value['id'] . '"  value="'.$value['name'].'"> ';
+                    echo '<input type="submit" name ="speise" id="' . $value['id'] . '"  value="'.$value['name'].'" onclick="counter()"> ';
                     echo"</td>";
                     echo "<td>".$row['preis_std']. "</td>";
                     echo "<td>".$row['preis_mit']. "</td>";
